@@ -62,7 +62,7 @@ function App() {
     e.preventDefault();
     try {
       
-      const response = await axios.put('http://localhost:3001/updateUser', { email: userData.email, year, branch,skills: selectedSkills });
+      const response = await axios.put('https://mern-backend-u7se.onrender.com/updateUser', { email: userData.email, year, branch,skills: selectedSkills });
       console.log(response.data);
       navigate('/')
       // Handle success, e.g., show a success message

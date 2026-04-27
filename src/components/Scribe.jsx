@@ -30,7 +30,7 @@ const App = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.put(`http://localhost:3001/updateDates/${signedInUserEmail}`, { dates });
+      await axios.put(`https://mern-backend-u7se.onrender.com/updateDates/${signedInUserEmail}`, { dates });
       // Assuming you have a function to fetch updated data
       fetchData();
     } catch (error) {
@@ -40,7 +40,7 @@ const App = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/usersWithDates');
+        const response = await axios.get('https://mern-backend-u7se.onrender.com/usersWithDates');
         setUsersWithDates(response.data);
         } catch (error) {
         console.error('Error fetching users with dates:', error);
@@ -52,7 +52,7 @@ const App = () => {
 
   const handleAccept = async (signedInUserEmail, userToAcceptEmail, date) => {
     try {
-      await axios.put(`http://localhost:3001/updateAccept/${signedInUserEmail}`, { userToAcceptEmail, date });
+      await axios.put(`https://mern-backend-u7se.onrender.com/updateAccept/${signedInUserEmail}`, { userToAcceptEmail, date });
       // Assuming you have a function to fetch updated data
       fetchData();
     } catch (error) {
@@ -65,7 +65,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/getUserName?email=${signedInUserEmail}`);
+        const response = await axios.get(`https://mern-backend-u7se.onrender.com/getUserName?email=${signedInUserEmail}`);
         setUserNames(response.data.names);
         setUserContact(response.data.contact);
       } catch (error) {

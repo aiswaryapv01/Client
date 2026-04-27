@@ -57,7 +57,7 @@ const SkillList = ({setFromSkillList}) => {
   const [selectedStars, setSelectedStars] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/usersBySkill/${title}`)
+    axios.get(`https://mern-backend-u7se.onrender.com/usersBySkill/${title}`)
       .then(response => {
         setUsers(response.data);
         console.log(users);
@@ -109,7 +109,7 @@ const SkillList = ({setFromSkillList}) => {
       }
 
       // Send a request to the backend to update the user's rating
-      const response = await axios.put(`http://localhost:3001/updateRating/${userId}`, {
+      const response = await axios.put(`https://mern-backend-u7se.onrender.com/updateRating/${userId}`, {
         rating: selectedStars,
       });
       console.log(response.data);

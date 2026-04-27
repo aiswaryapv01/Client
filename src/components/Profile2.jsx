@@ -98,7 +98,7 @@ const Profile2 = ({fromSkillList}) => {
         e.preventDefault();
         try {
           
-          const response = await axios.put('http://localhost:3001/updateUser', { email: userDetails.email, year, branch,skills: selectedSkills });
+          const response = await axios.put('https://mern-backend-u7se.onrender.com/updateUser', { email: userDetails.email, year, branch,skills: selectedSkills });
           console.log(response.data);
           window.location.reload(); 
           // Handle success, e.g., show a success message
@@ -110,7 +110,7 @@ const Profile2 = ({fromSkillList}) => {
       
    /*   useEffect(() => {
         if (email) {
-          axios.get(`http://localhost:3001/userDetails/${email}`)
+          axios.get(`https://mern-backend-u7se.onrender.com/userDetails/${email}`)
             .then(response => {
               const { userDetails, averageRating, ratingDistribution } = response.data;
               setUserDetails(userDetails);
@@ -124,7 +124,7 @@ const Profile2 = ({fromSkillList}) => {
       }, [email]);*/
       useEffect(() => {
         if (email) {
-          axios.get(`http://localhost:3001/userDetails/${email}`)
+          axios.get(`https://mern-backend-u7se.onrender.com/userDetails/${email}`)
             .then(response => {
               const { userDetails} = response.data;
               setUserDetails(userDetails);
